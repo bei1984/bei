@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扫雷游戏</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="game-title">
+      <section class="panel">
+        <p class="eyebrow">Classic Minesweeper</p>
+        <h1 id="game-title">扫雷</h1>
+        <p class="intro">左键翻开方块，右键或长按插旗。避开所有地雷并翻开安全格即可获胜。</p>
+
+        <div class="controls" aria-label="游戏控制">
+          <label>
+            难度
+            <select id="difficulty" aria-label="选择难度">
+              <option value="easy">初级 9×9 / 10 雷</option>
+              <option value="medium">中级 16×16 / 40 雷</option>
+              <option value="hard">高级 16×30 / 99 雷</option>
+            </select>
+          </label>
+          <button id="new-game" type="button">新游戏</button>
+        </div>
+
+        <div class="stats" aria-live="polite">
+          <div>
+            <span class="label">剩余雷数</span>
+            <strong id="mine-count">10</strong>
+          </div>
+          <div>
+            <span class="label">用时</span>
+            <strong><span id="timer">0</span>s</strong>
+          </div>
+          <div>
+            <span class="label">状态</span>
+            <strong id="status">准备开始</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="board-wrap" aria-label="扫雷棋盘区域">
+        <div id="board" class="board" role="grid" aria-label="扫雷棋盘"></div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
